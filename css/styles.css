@@ -382,3 +382,36 @@ dl dd ul li { border: none; }
 .course-header {
 	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
+
+.home-page .ui-btn {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    margin: .5em 0;
+    padding: 0;
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgba(111, 172, 213, 0.42);
+    padding: 5px;
+}
+
+.type-home .ui-content {
+  display: none;
+}
+
+.pure-form .signupPage {
+  display: none;
+  padding: .35em 0 .75em;
+  border: 0;
+  margin: auto;
+  width: 80%;
+}
+
+.pure-form .loginPage {
+  display: none;
+  padding: .35em 0 .75em;
+  border: 0;
+  margin: auto;
+  width: 80%;
+}

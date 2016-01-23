@@ -1,4 +1,22 @@
 $(document).ready(function () {
+
+  Parse.initialize("eKsGI0gYt6LobUiG66gHWCgjuLx9ZmeWn9XKyVDW", "ewHQdR7hLUgfIqxvUwiCnxnt7ZOjkb325rd1IeUt");
+  // var user = new Parse.User();
+  // user.set("username", "new name");
+  // user.set("password", "new pass");
+  // user.set("email", "newemail@example.com");
+    
+  // user.signUp(null, {
+  //   success: function(user) {
+  //     // Hooray! Let them use the app now.
+  //   },
+  //   error: function(user, error) {
+  //     // Show the error message somewhere and let the user try again.
+  //     alert("Error: " + error.code + " " + error.message);
+  //   }
+  // });
+  // var Parse = require('parse');
+
   ////
   // PubNub Decorator
   // -------------------
@@ -307,3 +325,61 @@ $(document).ready(function () {
     }
   });
 });
+
+function showContent(id) {
+    $('.loginButtons').fadeOut('slow');
+    setTimeout(function(){
+        $(id).fadeIn('slow');
+    }, 400);
+
+}
+
+function showChat() {
+    $('.pure-form').fadeOut('slow');
+    setTimeout(function(){
+        $('#startChat').fadeIn('slow');
+    }, 400);
+
+}
+
+function createUser() {
+    var user = new Parse.User();
+    var nameValue = document.getElementById("nameID").value;
+    var keyValue = document.getElementById("keyID").value;
+    var pwValue = document.getElementById("pwID").value;
+    var emailValue = document.getElementById("emailID").value;
+    // console.log(nameValue);
+    // console.log(keyValue);
+    // console.log(pwValue);
+    // console.log(emailValue);
+
+    user.set("username", keyValue);
+    user.set("name", nameValue);
+    user.set("password", pwValue);
+    user.set("email", emailValue);
+      
+    user.signUp(null, {
+      success: function(user) {
+        showChat();
+      },
+      error: function(user, error) {
+        // Show the error message somewhere and let the user try again.
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
+}
+
+function getUser() {
+  var keyValue = document.getElementById("loginKeyID").value;
+  var pwValue = document.getElementById("loginPwID").value;
+  Parse.User.logIn(keyValue, pwValue, {
+    success: function(user) {
+      // Do stuff after successful login.
+      showChat();
+    },
+    error: function(user, error) {
+      // The login failed. Check error to see why.
+      alert("Error: " + error.code + "Log in failed. Incorrect Pennkey and/or password.");
+    }
+  });
+}

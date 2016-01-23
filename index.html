@@ -15,6 +15,13 @@
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+		<link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+		<script src="https://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 		<script>
 		    $(document).bind('mobileinit',function(){
@@ -32,15 +39,75 @@
 	<body>
 		<!-- Home Page -->
 	    <div data-role="page" id="homePage" data-theme="c" class="type-home">
-	    	<div class="logo">
-	        	<h3>PennChats</h3>
-	        </div>
-	      	<div data-role="content">
+	    	<div class="home-page">
+				<div class="logo">
+		        	<h3>PennChats</h3>
+		        </div>
+		        <div class="loginButtons">
+		        	<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="showContent('#login');">
+						Log In
+					</button>
+					<br>
+					<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="showContent('#signup');">
+						Sign Up
+					</button>
+		        </div>
+			</div>
+			<div>
+				<form class="pure-form pure-form-aligned">
+				    <fieldset class="signupPage" id="signup">
+				    	<div class="pure-control-group">
+				            <input id="nameID" type="text" placeholder="Name">
+				        </div>
+
+				        <div class="pure-control-group">
+				            <input id="keyID" type="text" placeholder="Penn Key">
+				        </div>
+
+				        <div class="pure-control-group">
+				            <input id="pwID" type="password" placeholder="Password">
+				        </div>
+
+				        <div class="pure-control-group">
+				            <input id="emailID" type="email" placeholder="Penn Email">
+				        </div>
+
+				        <div class="pure-controls">
+				            <label for="cb" class="pure-checkbox">
+				                <input id="cb" type="checkbox"> I've read the terms and conditions.
+				            </label>
+
+				            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
+				            onclick="createUser();">
+								Sign Up!
+							</button>
+				        </div>
+				    </fieldset>
+				</form>
+			</div>
+			<div>
+				<form class="pure-form pure-form-aligned">
+				    <fieldset class="loginPage" id="login">
+				        <div class="pure-control-group">
+				            <input id="loginKeyID" type="text" placeholder="Pennkey">
+				        </div>
+
+				        <div class="pure-control-group">
+				            <input id="loginPwID" type="password" placeholder="Password">
+				        </div>
+
+				        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" onclick="showChat('#startChat')">
+							Log In!
+						</button>
+				    </fieldset>
+				</form>
+			</div>
+	      	<div data-role="content" id="startChat">
 	        	<input type="text" name="name" id="username" placeholder="Name" />
 	        	<a href="#" id="startChatButton" data-role="button">Start Chatting!</a>
 	      	</div><!-- /content -->
 
-			</div><!-- /page -->
+		</div><!-- /page -->
 
 	    <!-- Chat List Page -->
 	    <div data-role="page" id="chatListPage" data-theme="c" class="type-chat-list">
