@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body { margin:0; padding:0;}
+
+		</style>
+
+	</head>
+
+	<body>
+		<div>
+			<form method="post" action="upload.php" name="submit"
+				enctype="multipart/form-data">
+
+				<input type="file" name="fileField"> <br/> <br/>
+				<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+				<input type="submit" name="submit" value="Upload File">
+
+			</form>
+
+		</div>
+	</body>
+</html>
