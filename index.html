@@ -38,18 +38,19 @@
 	</head>
 
 	<body>
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+		    	<ol class="breadcrumb">
+				  <li onclick="showHome();">Home</li>
+				  <li onclick="showAbout();">About</li>
+				  <li onclick="logout();">Logout</li>
+				  <li onclick="showUploadPage();">Upload Schedule</li>
+				</ol>
+		  </div>
+		</nav>
 		<!-- Home Page -->
 	    <div data-role="page" id="homePage" data-theme="c" class="type-home">
 	    	<div class="home-page">
-	    		<nav class="navbar navbar-default navbar-fixed-bottom">
-				  <div class="container">
-		    		<ol class="breadcrumb">
-					  <li onclick="showHome();">Home</li>
-					  <li onclick="showAbout();">About</li>
-					  <li onclick="logout();">Logout</li>
-					</ol>
-				  </div>
-				</nav>
 				<div class="logo">
 		        	<h3>PennChats</h3>
 		        </div>
