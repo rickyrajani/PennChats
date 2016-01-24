@@ -1,0 +1,309 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'ical' ]
+2 info using npm@1.4.26
+3 info using node@v0.10.31
+4 verbose node symlink /usr/local/bin/node
+5 verbose cache add [ 'ical', null ]
+6 verbose cache add name=undefined spec="ical" args=["ical",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'ical',
+7 verbose parsed url   path: 'ical',
+7 verbose parsed url   href: 'ical' }
+8 silly lockFile 90b3d59d-ical ical
+9 verbose lock ical /Users/sahilahuja/.npm/90b3d59d-ical.lock
+10 silly lockFile 90b3d59d-ical ical
+11 silly lockFile 90b3d59d-ical ical
+12 verbose addNamed [ 'ical', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile d5b47a96-ical ical@
+15 verbose lock ical@ /Users/sahilahuja/.npm/d5b47a96-ical.lock
+16 silly addNameRange { name: 'ical', range: '*', hasData: false }
+17 verbose request where is /ical
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 94a82db6daa5c591
+20 verbose url raw /ical
+21 verbose url resolving [ 'https://registry.npmjs.org/', './ical' ]
+22 verbose url resolved https://registry.npmjs.org/ical
+23 verbose request where is https://registry.npmjs.org/ical
+24 info trying registry request attempt 1 at 17:29:06
+25 http GET https://registry.npmjs.org/ical
+26 http 200 https://registry.npmjs.org/ical
+27 silly registry.get cb [ 200,
+27 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     etag: '"9ISBA7ROWS0CKAVRSZJGTOCMH"',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=300',
+27 silly registry.get     'content-length': '10923',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Sat, 23 Jan 2016 22:29:07 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-iad2125-IAD',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1453588147.386646,VS0,VE393',
+27 silly registry.get     vary: 'Accept' } ]
+28 silly addNameRange number 2 { name: 'ical', range: '*', hasData: true }
+29 silly addNameRange versions [ 'ical',
+29 silly addNameRange   [ '0.0.0',
+29 silly addNameRange     '0.0.2',
+29 silly addNameRange     '0.0.3',
+29 silly addNameRange     '0.0.4',
+29 silly addNameRange     '0.0.5',
+29 silly addNameRange     '0.0.6',
+29 silly addNameRange     '0.1.0',
+29 silly addNameRange     '0.2.0',
+29 silly addNameRange     '0.3.0',
+29 silly addNameRange     '0.3.1',
+29 silly addNameRange     '0.4.0' ] ]
+30 verbose addNamed [ 'ical', '0.4.0' ]
+31 verbose addNamed [ '0.4.0', '0.4.0' ]
+32 silly lockFile d3b7abcf-ical-0-4-0 ical@0.4.0
+33 verbose lock ical@0.4.0 /Users/sahilahuja/.npm/d3b7abcf-ical-0-4-0.lock
+34 silly lockFile 763049aa-ry-npmjs-org-ical-ical-0-4-0-tgz https://registry.npmjs.org/ical/-/ical-0.4.0.tgz
+35 verbose lock https://registry.npmjs.org/ical/-/ical-0.4.0.tgz /Users/sahilahuja/.npm/763049aa-ry-npmjs-org-ical-ical-0-4-0-tgz.lock
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/ical/-/ical-0.4.0.tgz',
+36 verbose addRemoteTarball   '97702937658d377cb1bb9d68d53b69a503c17c32' ]
+37 info retry fetch attempt 1 at 17:29:07
+38 verbose fetch to= /var/folders/g0/04zql0c92tz38g3ksvbd25380000gn/T/npm-16932-VDD_s3CM/registry.npmjs.org/ical/-/ical-0.4.0.tgz
+39 http GET https://registry.npmjs.org/ical/-/ical-0.4.0.tgz
+40 http 200 https://registry.npmjs.org/ical/-/ical-0.4.0.tgz
+41 silly lockFile 763049aa-ry-npmjs-org-ical-ical-0-4-0-tgz https://registry.npmjs.org/ical/-/ical-0.4.0.tgz
+42 silly lockFile 763049aa-ry-npmjs-org-ical-ical-0-4-0-tgz https://registry.npmjs.org/ical/-/ical-0.4.0.tgz
+43 silly lockFile d3b7abcf-ical-0-4-0 ical@0.4.0
+44 silly lockFile d3b7abcf-ical-0-4-0 ical@0.4.0
+45 silly lockFile d5b47a96-ical ical@
+46 silly lockFile d5b47a96-ical ical@
+47 silly resolved [ { name: 'ical',
+47 silly resolved     version: '0.4.0',
+47 silly resolved     main: 'index.js',
+47 silly resolved     description: 'A tolerant, minimal icalendar parser',
+47 silly resolved     keywords: [ 'ical', 'ics', 'calendar' ],
+47 silly resolved     homepage: 'https://github.com/peterbraden/ical.js',
+47 silly resolved     author:
+47 silly resolved      { name: 'Peter Braden',
+47 silly resolved        email: 'peterbraden@peterbraden.co.uk',
+47 silly resolved        url: 'peterbraden.co.uk' },
+47 silly resolved     repository: { type: 'git', url: 'git://github.com/peterbraden/ical.js.git' },
+47 silly resolved     dependencies: { request: '2.40.0', rrule: '2.0.0' },
+47 silly resolved     devDependencies: { vows: '0.7.0', underscore: '1.3.0' },
+47 silly resolved     scripts: { test: './node_modules/vows/bin/vows ./test/test.js' },
+47 silly resolved     gitHead: '1550eb8f508c90d920d70eb709ca319d34b07b26',
+47 silly resolved     bugs: { url: 'https://github.com/peterbraden/ical.js/issues' },
+47 silly resolved     _id: 'ical@0.4.0',
+47 silly resolved     _shasum: '97702937658d377cb1bb9d68d53b69a503c17c32',
+47 silly resolved     _from: 'ical@',
+47 silly resolved     _npmVersion: '2.5.1',
+47 silly resolved     _nodeVersion: '1.2.0',
+47 silly resolved     _npmUser: { name: 'peterbraden', email: 'peterbraden@peterbraden.co.uk' },
+47 silly resolved     maintainers: [ [Object] ],
+47 silly resolved     dist:
+47 silly resolved      { shasum: '97702937658d377cb1bb9d68d53b69a503c17c32',
+47 silly resolved        tarball: 'http://registry.npmjs.org/ical/-/ical-0.4.0.tgz' },
+47 silly resolved     directories: {},
+47 silly resolved     _resolved: 'https://registry.npmjs.org/ical/-/ical-0.4.0.tgz' } ]
+48 info install ical@0.4.0 into /Users/sahilahuja/Documents/Projects/PennChats/PennChats
+49 info installOne ical@0.4.0
+50 verbose node_modules/ical unbuild
+51 verbose tar unpack /Users/sahilahuja/.npm/ical/0.4.0/package.tgz
+52 silly lockFile e1139f7b-hats-PennChats-node-modules-ical tar:///Users/sahilahuja/Documents/Projects/PennChats/PennChats/node_modules/ical
+53 verbose lock tar:///Users/sahilahuja/Documents/Projects/PennChats/PennChats/node_modules/ical /Users/sahilahuja/.npm/e1139f7b-hats-PennChats-node-modules-ical.lock
+54 silly lockFile 30dc2a09-ahuja-npm-ical-0-4-0-package-tgz tar:///Users/sahilahuja/.npm/ical/0.4.0/package.tgz
+55 verbose lock tar:///Users/sahilahuja/.npm/ical/0.4.0/package.tgz /Users/sahilahuja/.npm/30dc2a09-ahuja-npm-ical-0-4-0-package-tgz.lock
+56 silly gunzTarPerm modes [ '755', '644' ]
+57 silly gunzTarPerm extractEntry package.json
+58 silly gunzTarPerm extractEntry .npmignore
+59 silly gunzTarPerm extractEntry LICENSE
+60 silly gunzTarPerm extractEntry example.js
+61 silly gunzTarPerm extractEntry ical.js
+62 silly gunzTarPerm extractEntry index.js
+63 silly gunzTarPerm extractEntry node-ical.js
+64 silly gunzTarPerm extractEntry .package.json.un~
+65 silly gunzTarPerm extractEntry .travis.yml
+66 silly gunzTarPerm extractEntry ..travis.yml.un~
+67 silly gunzTarPerm extractEntry readme.md
+68 silly gunzTarPerm extractEntry NOTICE
+69 silly gunzTarPerm extractEntry test/test.js
+70 silly gunzTarPerm extractEntry test/test3.ics
+71 silly gunzTarPerm extractEntry test/test1.ics
+72 silly gunzTarPerm extractEntry test/test10.ics
+73 silly gunzTarPerm extractEntry test/test11.ics
+74 silly gunzTarPerm extractEntry test/test2.ics
+75 silly gunzTarPerm extractEntry test/.test.js.un~
+76 silly gunzTarPerm extractEntry test/test4.ics
+77 silly gunzTarPerm extractEntry test/test5.ics
+78 silly gunzTarPerm extractEntry test/test6.ics
+79 silly gunzTarPerm extractEntry test/test8.ics
+80 silly gunzTarPerm extractEntry test/test9.ics
+81 silly lockFile e1139f7b-hats-PennChats-node-modules-ical tar:///Users/sahilahuja/Documents/Projects/PennChats/PennChats/node_modules/ical
+82 silly lockFile e1139f7b-hats-PennChats-node-modules-ical tar:///Users/sahilahuja/Documents/Projects/PennChats/PennChats/node_modules/ical
+83 silly lockFile 30dc2a09-ahuja-npm-ical-0-4-0-package-tgz tar:///Users/sahilahuja/.npm/ical/0.4.0/package.tgz
+84 silly lockFile 30dc2a09-ahuja-npm-ical-0-4-0-package-tgz tar:///Users/sahilahuja/.npm/ical/0.4.0/package.tgz
+85 info preinstall ical@0.4.0
+86 verbose readDependencies using package.json deps
+87 verbose readDependencies using package.json deps
+88 verbose cache add [ 'request@2.40.0', null ]
+89 verbose cache add name=undefined spec="request@2.40.0" args=["request@2.40.0",null]
+90 verbose parsed url { protocol: null,
+90 verbose parsed url   slashes: null,
+90 verbose parsed url   auth: null,
+90 verbose parsed url   host: null,
+90 verbose parsed url   port: null,
+90 verbose parsed url   hostname: null,
+90 verbose parsed url   hash: null,
+90 verbose parsed url   search: null,
+90 verbose parsed url   query: null,
+90 verbose parsed url   pathname: 'request@2.40.0',
+90 verbose parsed url   path: 'request@2.40.0',
+90 verbose parsed url   href: 'request@2.40.0' }
+91 verbose cache add [ 'rrule@2.0.0', null ]
+92 verbose cache add name=undefined spec="rrule@2.0.0" args=["rrule@2.0.0",null]
+93 verbose parsed url { protocol: null,
+93 verbose parsed url   slashes: null,
+93 verbose parsed url   auth: null,
+93 verbose parsed url   host: null,
+93 verbose parsed url   port: null,
+93 verbose parsed url   hostname: null,
+93 verbose parsed url   hash: null,
+93 verbose parsed url   search: null,
+93 verbose parsed url   query: null,
+93 verbose parsed url   pathname: 'rrule@2.0.0',
+93 verbose parsed url   path: 'rrule@2.0.0',
+93 verbose parsed url   href: 'rrule@2.0.0' }
+94 verbose cache add name="request" spec="2.40.0" args=["request","2.40.0"]
+95 verbose parsed url { protocol: null,
+95 verbose parsed url   slashes: null,
+95 verbose parsed url   auth: null,
+95 verbose parsed url   host: null,
+95 verbose parsed url   port: null,
+95 verbose parsed url   hostname: null,
+95 verbose parsed url   hash: null,
+95 verbose parsed url   search: null,
+95 verbose parsed url   query: null,
+95 verbose parsed url   pathname: '2.40.0',
+95 verbose parsed url   path: '2.40.0',
+95 verbose parsed url   href: '2.40.0' }
+96 verbose addNamed [ 'request', '2.40.0' ]
+97 verbose addNamed [ '2.40.0', '2.40.0' ]
+98 silly lockFile 8bc988e5-request-2-40-0 request@2.40.0
+99 verbose lock request@2.40.0 /Users/sahilahuja/.npm/8bc988e5-request-2-40-0.lock
+100 verbose cache add name="rrule" spec="2.0.0" args=["rrule","2.0.0"]
+101 verbose parsed url { protocol: null,
+101 verbose parsed url   slashes: null,
+101 verbose parsed url   auth: null,
+101 verbose parsed url   host: null,
+101 verbose parsed url   port: null,
+101 verbose parsed url   hostname: null,
+101 verbose parsed url   hash: null,
+101 verbose parsed url   search: null,
+101 verbose parsed url   query: null,
+101 verbose parsed url   pathname: '2.0.0',
+101 verbose parsed url   path: '2.0.0',
+101 verbose parsed url   href: '2.0.0' }
+102 verbose addNamed [ 'rrule', '2.0.0' ]
+103 verbose addNamed [ '2.0.0', '2.0.0' ]
+104 silly lockFile 92b583f9-rrule-2-0-0 rrule@2.0.0
+105 verbose lock rrule@2.0.0 /Users/sahilahuja/.npm/92b583f9-rrule-2-0-0.lock
+106 verbose request where is /rrule
+107 verbose request registry https://registry.npmjs.org/
+108 verbose url raw /rrule
+109 verbose url resolving [ 'https://registry.npmjs.org/', './rrule' ]
+110 verbose url resolved https://registry.npmjs.org/rrule
+111 verbose request where is https://registry.npmjs.org/rrule
+112 info trying registry request attempt 1 at 17:29:08
+113 http GET https://registry.npmjs.org/rrule
+114 verbose request where is /request
+115 verbose request registry https://registry.npmjs.org/
+116 verbose url raw /request
+117 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
+118 verbose url resolved https://registry.npmjs.org/request
+119 verbose request where is https://registry.npmjs.org/request
+120 info trying registry request attempt 1 at 17:29:08
+121 verbose etag "4J0Q5R70NL80CZ1G40JZWYZMS"
+122 http GET https://registry.npmjs.org/request
+123 http 200 https://registry.npmjs.org/request
+124 silly registry.get cb [ 200,
+124 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+124 silly registry.get     etag: '"WJ37TOSFGYAB62QMU4FFLF3Q"',
+124 silly registry.get     'content-type': 'application/json',
+124 silly registry.get     'cache-control': 'max-age=300',
+124 silly registry.get     'content-length': '181046',
+124 silly registry.get     'accept-ranges': 'bytes',
+124 silly registry.get     date: 'Sat, 23 Jan 2016 22:29:08 GMT',
+124 silly registry.get     via: '1.1 varnish',
+124 silly registry.get     age: '140',
+124 silly registry.get     connection: 'keep-alive',
+124 silly registry.get     'x-served-by': 'cache-iad2131-IAD',
+124 silly registry.get     'x-cache': 'HIT',
+124 silly registry.get     'x-cache-hits': '4',
+124 silly registry.get     'x-timer': 'S1453588148.138556,VS0,VE0',
+124 silly registry.get     vary: 'Accept' } ]
+125 silly lockFile 809205ab-s-org-request-request-2-40-0-tgz https://registry.npmjs.org/request/-/request-2.40.0.tgz
+126 verbose lock https://registry.npmjs.org/request/-/request-2.40.0.tgz /Users/sahilahuja/.npm/809205ab-s-org-request-request-2-40-0-tgz.lock
+127 verbose addRemoteTarball [ 'https://registry.npmjs.org/request/-/request-2.40.0.tgz',
+127 verbose addRemoteTarball   '4dd670f696f1e6e842e66b4b5e839301ab9beb67' ]
+128 info retry fetch attempt 1 at 17:29:08
+129 verbose fetch to= /var/folders/g0/04zql0c92tz38g3ksvbd25380000gn/T/npm-16932-VDD_s3CM/registry.npmjs.org/request/-/request-2.40.0.tgz
+130 http GET https://registry.npmjs.org/request/-/request-2.40.0.tgz
+131 http 200 https://registry.npmjs.org/rrule
+132 silly registry.get cb [ 200,
+132 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+132 silly registry.get     etag: '"26RN1WPE9MWUFQVZZ7AYJQP21"',
+132 silly registry.get     'content-type': 'application/json',
+132 silly registry.get     'cache-control': 'max-age=300',
+132 silly registry.get     'content-length': '22973',
+132 silly registry.get     'accept-ranges': 'bytes',
+132 silly registry.get     date: 'Sat, 23 Jan 2016 22:29:08 GMT',
+132 silly registry.get     via: '1.1 varnish',
+132 silly registry.get     age: '0',
+132 silly registry.get     connection: 'keep-alive',
+132 silly registry.get     'x-served-by': 'cache-iad2129-IAD',
+132 silly registry.get     'x-cache': 'MISS',
+132 silly registry.get     'x-cache-hits': '0',
+132 silly registry.get     'x-timer': 'S1453588148.136729,VS0,VE56',
+132 silly registry.get     vary: 'Accept' } ]
+133 silly lockFile c1c044f5--npmjs-org-rrule-rrule-2-0-0-tgz https://registry.npmjs.org/rrule/-/rrule-2.0.0.tgz
+134 verbose lock https://registry.npmjs.org/rrule/-/rrule-2.0.0.tgz /Users/sahilahuja/.npm/c1c044f5--npmjs-org-rrule-rrule-2-0-0-tgz.lock
+135 verbose addRemoteTarball [ 'https://registry.npmjs.org/rrule/-/rrule-2.0.0.tgz',
+135 verbose addRemoteTarball   'c54a75ffc88671dd72fe459556a6bcf6cf2cf26e' ]
+136 info retry fetch attempt 1 at 17:29:08
+137 verbose fetch to= /var/folders/g0/04zql0c92tz38g3ksvbd25380000gn/T/npm-16932-VDD_s3CM/registry.npmjs.org/rrule/-/rrule-2.0.0.tgz
+138 http GET https://registry.npmjs.org/rrule/-/rrule-2.0.0.tgz
+139 http 200 https://registry.npmjs.org/request/-/request-2.40.0.tgz
+140 http 200 https://registry.npmjs.org/rrule/-/rrule-2.0.0.tgz
+141 silly lockFile 809205ab-s-org-request-request-2-40-0-tgz https://registry.npmjs.org/request/-/request-2.40.0.tgz
+142 silly lockFile 809205ab-s-org-request-request-2-40-0-tgz https://registry.npmjs.org/request/-/request-2.40.0.tgz
+143 silly lockFile 8bc988e5-request-2-40-0 request@2.40.0
+144 silly lockFile 8bc988e5-request-2-40-0 request@2.40.0
+145 verbose about to build /Users/sahilahuja/Documents/Projects/PennChats/PennChats/node_modules/ical
+146 verbose node_modules/ical unbuild
+147 info preuninstall ical@0.4.0
+148 info uninstall ical@0.4.0
+149 verbose true,/Users/sahilahuja/Documents/Projects/PennChats/PennChats/node_modules,/Users/sahilahuja/Documents/Projects/PennChats/PennChats/node_modules unbuild ical@0.4.0
+150 info postuninstall ical@0.4.0
+151 error Error: EACCES, mkdir '/Users/sahilahuja/.npm/request/2.40.0'
+151 error  { [Error: EACCES, mkdir '/Users/sahilahuja/.npm/request/2.40.0']
+151 error   errno: 3,
+151 error   code: 'EACCES',
+151 error   path: '/Users/sahilahuja/.npm/request/2.40.0',
+151 error   parent: 'ical' }
+152 error Please try running this command again as root/Administrator.
+153 error System Darwin 15.2.0
+154 error command "node" "/usr/local/bin/npm" "install" "ical"
+155 error cwd /Users/sahilahuja/Documents/Projects/PennChats/PennChats
+156 error node -v v0.10.31
+157 error npm -v 1.4.26
+158 error path /Users/sahilahuja/.npm/request/2.40.0
+159 error code EACCES
+160 error errno 3
+161 error stack Error: EACCES, mkdir '/Users/sahilahuja/.npm/request/2.40.0'
+162 verbose exit [ 3, true ]
