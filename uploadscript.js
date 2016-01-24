@@ -1,6 +1,10 @@
 function readBlob(opt_startByte, opt_stopByte) {
 
 	Parse.initialize("eKsGI0gYt6LobUiG66gHWCgjuLx9ZmeWn9XKyVDW", "ewHQdR7hLUgfIqxvUwiCnxnt7ZOjkb325rd1IeUt");
+	var currentUser = Parse.User.current();
+
+	// if currentUser... else ...
+
 
 	var files = document.getElementById('files').files;
 	if (!files.length) {
@@ -16,32 +20,37 @@ function readBlob(opt_startByte, opt_stopByte) {
 
 	// If we use onloadend, we need to check the readyState.
 	reader.onloadend = function(evt) {
-	  if (evt.target.readyState == FileReader.DONE) { // DONE == 2
-	    var icaltext = evt.target.result;
+	  	if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+		    var icaltext = evt.target.result;
 
-	    icalParser.parseIcal(icaltext);
+		    icalParser.parseIcal(icaltext);
 
-    	var CourseRoom = Parse.Object.extend("CourseRoom");
+	    	var CourseRoom = Parse.Object.extend("CourseRoom");
 
-	    for (event of icalParser.icals[0].events) {
+		    for (event of icalParser.icals[0].events) {
+		    	
+	    		var courseRoom = new CourseRoom();
+		    	
+		    	courseRoom.set("course_section_name", event.summary[0].value);
+		    	courseRoom.set("start_date", event.dtstart[0].value.substring(0,8));
+		    	courseRoom.set("start_time", event.dtstart[0].value.substring(9, 13));
+		    	courseRoom.set("end_time", event.dtend[0].value.substring(9, 13));
+		    	courseRoom.set("description", event.description[0].value);
+		    	
+				var repeat_details = event.rrule[0].value.split(";");
+		    	var enddate = repeat_details[3].split("=");
+		    	var sessionday = repeat_details[4].split("=");
 
-	    	var courseRoom = new CourseRoom();
-	    	courseRoom.set("course_section_name", event.summary[0].value);
-	    	courseRoom.set("start_date", event.dtstart[0].value.substring(0,8));
-	    	courseRoom.set("start_time", event.dtstart[0].value.substring(9, 13));
-	    	courseRoom.set("end_time", event.dtend[0].value.substring(9, 13));
-	    	courseRoom.set("description", event.description[0].value);
+				courseRoom.set("end_date", enddate[1]);
+		    	courseRoom.set("day_of_week", sessionday[1]);
+				
+				currentUser.add("rooms", courseRoom.id);
 
-	    	var repeat_details = event.rrule[0].value.split(";");
-	    	var enddate = repeat_details[3].split("=");
-	    	var sessionday = repeat_details[4].split("=");
+				courseRoom.save();
+			}
 
-	    	courseRoom.set("end_date", enddate[1]);
-	    	courseRoom.set("day_of_week", sessionday[1]);
-
-	    	courseRoom.save();
-	    }
-	  }
+			currentUser.save();
+  		}
 	};
 
 	reader.readAsText(file);
