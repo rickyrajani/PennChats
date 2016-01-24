@@ -44,7 +44,7 @@ function readBlob(opt_startByte, opt_stopByte) {
 				courseRoom.set("end_date", enddate[1]);
 		    	courseRoom.set("day_of_week", sessionday[1]);
 				
-				currentUser.add("rooms", courseRoom.objectId);
+				currentUser.add("rooms", courseRoom.id);
 
 				courseRoom.save();
 			}
