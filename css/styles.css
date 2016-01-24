@@ -406,6 +406,7 @@ dl dd ul li { border: none; }
   border: 0;
   margin: auto;
   width: 80%;
+  margin-bottom: 60px;
 }
 
 .pure-form .loginPage {
@@ -414,4 +415,51 @@ dl dd ul li { border: none; }
   border: 0;
   margin: auto;
   width: 80%;
+}
+
+.go-back {
+    text-decoration: underline;
+    font-size: 12px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color: rgb(111, 172, 213);
+    cursor: pointer;
+}
+
+
+.breadcrumb {
+    background-color: #90b8cb;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    text-shadow: 0 1px 0 rgba(124, 175, 210, 0.69);
+}
+
+.breadcrumb li {
+    cursor: pointer;
+}
+
+.about-page {
+    display: none;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+}
+
+.upload-page {
+    display: none;
+    margin-bottom: 80px;
+}
+
+.directions {
+    margin: auto;
+    width: 60%;
+    border: 3px dashed #337ab7;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.upload-page .ui-btn {
+    margin: auto;
+    width: 40%;
+    padding: 10px;
 }

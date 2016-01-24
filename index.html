@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="PennChats. Hello.">
-		<meta name="keywords" content="University of Pennsylvania, penn, upenn, chats, chat"/>
+		<meta name="keywords" content="University of Pennsylvania, penn, upenn, chats, chat, penn chats"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -33,6 +33,7 @@
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 		<script src="http://cdn.pubnub.com/pubnub-3.4.4.js"></script>
 		<script src="js/messenger.js"></script>
+		<script src="ical_parser.js"> </script>
 		<title>Penn Chats</title>
 	</head>
 
@@ -40,6 +41,15 @@
 		<!-- Home Page -->
 	    <div data-role="page" id="homePage" data-theme="c" class="type-home">
 	    	<div class="home-page">
+	    		<nav class="navbar navbar-default navbar-fixed-bottom">
+				  <div class="container">
+		    		<ol class="breadcrumb">
+					  <li onclick="showHome();">Home</li>
+					  <li onclick="showAbout();">About</li>
+					  <li onclick="logout();">Logout</li>
+					</ol>
+				  </div>
+				</nav>
 				<div class="logo">
 		        	<h3>PennChats</h3>
 		        </div>
@@ -82,6 +92,12 @@
 								Sign Up!
 							</button>
 				        </div>
+
+				        <br>
+
+				        <div class="go-back" onclick="hideContent('#signup');">
+				        	Back to home page
+				        </div>
 				    </fieldset>
 				</form>
 			</div>
@@ -99,8 +115,34 @@
 				        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" onclick="showChat('#startChat')">
 							Log In!
 						</button>
+
+				        <div class="go-back" onclick="hideContent('#login');">
+				        	Back to home page
+				        </div>
 				    </fieldset>
 				</form>
+			</div>
+			<div class="about-page">
+				Welcome to PennChats. 
+				<br>
+				This is an online chatting service for students to log into only during class and interact with fellow students. 
+				<br>
+				Enjoy.
+			</div>
+			<div class="upload-page">
+				<div class ="directions">
+					<h3>How to upload your schedule:</h3>
+					<p>1. Navigate to PennInTouch</p>
+					<p>2. Click on the image of your course schedule</p>
+					<p>3. Choose to 'Export as iCalendar'</p>
+					<p>4. Upload the downloaded file here</p>
+					<input type="file" id="files" name="file"/>
+					<br>
+					<p>5. Chat away!</p>
+				</div>
+				<br>
+				<button id="read_button" onclick="showChat();">Upload File!</button>
+				<script src="uploadscript.js"> </script>
 			</div>
 	      	<div data-role="content" id="startChat">
 	        	<input type="text" name="name" id="username" placeholder="Name" />

@@ -1,20 +1,12 @@
 $(document).ready(function () {
 
   Parse.initialize("eKsGI0gYt6LobUiG66gHWCgjuLx9ZmeWn9XKyVDW", "ewHQdR7hLUgfIqxvUwiCnxnt7ZOjkb325rd1IeUt");
-  // var user = new Parse.User();
-  // user.set("username", "new name");
-  // user.set("password", "new pass");
-  // user.set("email", "newemail@example.com");
-    
-  // user.signUp(null, {
-  //   success: function(user) {
-  //     // Hooray! Let them use the app now.
-  //   },
-  //   error: function(user, error) {
-  //     // Show the error message somewhere and let the user try again.
-  //     alert("Error: " + error.code + " " + error.message);
-  //   }
-  // });
+  var currentUser = Parse.User.current();
+  if (currentUser) {
+      showChat();
+  } else {
+      hideContent('#signup');
+  }
   // var Parse = require('parse');
 
   ////
@@ -327,17 +319,30 @@ $(document).ready(function () {
 });
 
 function showContent(id) {
-    $('.loginButtons').fadeOut('slow');
+    $('.loginButtons').fadeOut('fast');
+
     setTimeout(function(){
         $(id).fadeIn('slow');
     }, 400);
 
 }
 
-function showChat() {
-    $('.pure-form').fadeOut('slow');
+function hideContent(id) {
+    $(id).fadeOut('slow');
+
     setTimeout(function(){
-        $('#startChat').fadeIn('slow');
+        $('.loginButtons').fadeIn('fast');
+    }, 400);
+
+}
+
+function showChat() {
+    $('.pure-form').fadeOut('fast');
+    $('.loginButtons').fadeOut('fast');
+    $('.upload-page').fadeOut('fast');
+
+    setTimeout(function(){
+        $('#startChat').fadeIn('fast');
     }, 400);
 
 }
@@ -357,10 +362,11 @@ function createUser() {
     user.set("name", nameValue);
     user.set("password", pwValue);
     user.set("email", emailValue);
+    // user.set("emailVerified", false);
       
     user.signUp(null, {
       success: function(user) {
-        showChat();
+        showUploadPage();
       },
       error: function(user, error) {
         // Show the error message somewhere and let the user try again.
@@ -382,4 +388,49 @@ function getUser() {
       alert("Error: " + error.code + "Log in failed. Incorrect Pennkey and/or password.");
     }
   });
+}
+
+function logout() {
+  Parse.User.logOut();
+  $('#chatListPage').fadeOut('fast');
+  $('#chatPage').fadeOut('fast');
+  $('#delete').fadeOut('fast');
+  $('#startChat').fadeOut('fast');
+  $('.about-page').fadeOut('fast');
+  $('.upload-page').fadeOut('fast');
+  
+  setTimeout(function(){
+      $('.loginButtons').fadeIn('fast');
+  }, 400);
+}
+
+function showAbout() {
+  $('.pure-form').fadeOut('fast');
+  $('.loginButtons').fadeOut('fast');
+  $('#chatListPage').fadeOut('fast');
+  $('#chatPage').fadeOut('fast');
+  $('#delete').fadeOut('fast');
+  $('#startChat').fadeOut('fast');
+  $('.upload-page').fadeOut('fast');
+  
+  setTimeout(function(){
+      $('.about-page').fadeIn('fast');
+  }, 200);
+}
+
+function showHome() {
+  location.reload();
+}
+
+function showUploadPage() {
+  $('.pure-form').fadeOut('fast');
+  $('.loginButtons').fadeOut('fast');
+  $('#chatListPage').fadeOut('fast');
+  $('#chatPage').fadeOut('fast');
+  $('#delete').fadeOut('fast');
+  $('#startChat').fadeOut('fast');
+
+  setTimeout(function(){
+      $('.upload-page').fadeIn('fast');
+  }, 200);
 }
