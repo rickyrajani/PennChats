@@ -65,7 +65,7 @@
 		        </div>
 			</div>
 			<div>
-				<form class="pure-form pure-form-aligned">
+				<form class="pure-form pure-form-aligned" >
 				    <fieldset class="signupPage" id="signup">
 				    	<div class="pure-control-group">
 				            <input id="nameID" type="text" placeholder="Name">
@@ -102,7 +102,7 @@
 				    </fieldset>
 				</form>
 			</div>
-			<div>
+			<div > 
 				<form class="pure-form pure-form-aligned">
 				    <fieldset class="loginPage" id="login">
 				        <div class="pure-control-group">
@@ -113,7 +113,7 @@
 				            <input id="loginPwID" type="password" placeholder="Password">
 				        </div>
 
-				        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" onclick="showChat('#startChat')">
+				        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" onclick="getUser()">
 							Log In!
 						</button>
 
@@ -145,11 +145,6 @@
 				<button id="read_button" onclick="showChat();">Upload File!</button>
 				<script src="uploadscript.js"> </script>
 			</div>
-	      	<div data-role="content" id="startChat">
-	        	<input type="text" name="name" id="username" placeholder="Name" />
-	        	<a href="#" id="startChatButton" data-role="button">Start Chatting!</a>
-	      	</div><!-- /content -->
-
 		</div><!-- /page -->
 
 	    <!-- Chat List Page -->

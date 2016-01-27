@@ -4,8 +4,11 @@ $(document).ready(function () {
   var currentUser = Parse.User.current();
   if (currentUser) {
       showChat();
+      console.log("1");
   } else {
-      hideContent('#signup');
+      hideContent('#loginButtons');
+      console.log("2");
+
   }
   // var Parse = require('parse');
 
@@ -74,7 +77,6 @@ $(document).ready(function () {
       users = [],
       usernameInput = $('#username'),
       chatRoomName = $("#chatRoomName"),
-      chatButton = $("#startChatButton"),
       newChatButton = $("#newChatButton"),
       chatListEl = $("#chatList"),
       sendMessageButton = $("#sendMessageButton"),
@@ -117,22 +119,17 @@ $(document).ready(function () {
   // Home View
   /////
   function HomeView() {
-    if (localStorage["username"]) {
-      usernameInput.val(localStorage["username"]);
+
+    if (currentUser) {
+      username = Parse.user.get("username");
+      pubnub.connect(username);
+      $.mobile.changePage(pages.chatList);
+
+      showChat();
+    } else {
+        // hideContent('#signup');
+        console.log("shouldn't be here");
     }
-
-    chatButton.off('click');
-    chatButton.click(function (event) {
-      if(usernameInput.val() != '') {
-        username = usernameInput.val();
-
-        localStorage["username"] = username;
-
-        pubnub.connect(username);
-
-        $.mobile.changePage(pages.chatList);
-      }
-    });
   };
 
   /////
@@ -342,7 +339,7 @@ function showChat() {
     $('.upload-page').fadeOut('fast');
 
     setTimeout(function(){
-        $('#startChat').fadeIn('fast');
+        $('#chatListPage').fadeIn('fast');
     }, 400);
 
 }
@@ -382,6 +379,7 @@ function getUser() {
     success: function(user) {
       // Do stuff after successful login.
       showChat();
+      console.log("parse logged me in");
     },
     error: function(user, error) {
       // The login failed. Check error to see why.
@@ -395,10 +393,11 @@ function logout() {
   $('#chatListPage').fadeOut('fast');
   $('#chatPage').fadeOut('fast');
   $('#delete').fadeOut('fast');
-  $('#startChat').fadeOut('fast');
   $('.about-page').fadeOut('fast');
   $('.upload-page').fadeOut('fast');
   
+
+
   setTimeout(function(){
       $('.loginButtons').fadeIn('fast');
   }, 400);
@@ -410,7 +409,6 @@ function showAbout() {
   $('#chatListPage').fadeOut('fast');
   $('#chatPage').fadeOut('fast');
   $('#delete').fadeOut('fast');
-  $('#startChat').fadeOut('fast');
   $('.upload-page').fadeOut('fast');
   
   setTimeout(function(){
@@ -428,7 +426,6 @@ function showUploadPage() {
   $('#chatListPage').fadeOut('fast');
   $('#chatPage').fadeOut('fast');
   $('#delete').fadeOut('fast');
-  $('#startChat').fadeOut('fast');
 
   setTimeout(function(){
       $('.upload-page').fadeIn('fast');
