@@ -123,7 +123,10 @@ $(document).ready(function () {
     if (currentUser) {
       username = Parse.user.get("username");
       pubnub.connect(username);
-      $.mobile.changePage(pages.chatList);
+
+
+      chatChannel = "TestChannel";
+      $.mobile.changePage(pages.chat);
 
       showChat();
     } else {
@@ -136,24 +139,10 @@ $(document).ready(function () {
   // Chat List View
   ///////
   function ChatListView(event, data) {
-    chatListEl.empty();
-    for(var i = 0; i < pubnub.subscriptions.length; i++) {
-      var chatName = pubnub.subscriptions[i],
-          chatEl = $("<li><a href='#chatPage' data-channel-name='" + chatName + "'>" 
-            + chatName 
-            + "</a><a href='#delete' data-rel='dialog' data-channel-name='" + chatName + "'></a></li>");
-      chatListEl.append(chatEl);
-      chatListEl.listview('refresh');
-    }
+    
+    chatChannel = "TestChannel";
 
-    newChatButton.off('click');
-    newChatButton.click(function (event) {
-      if(chatRoomName.val() !== '') {
-        chatChannel = chatRoomName.val();
-
-        $.mobile.changePage(pages.chat);
-      }
-    });
+    $.mobile.changePage(pages.chat);
   };
 
   //////
@@ -339,7 +328,10 @@ function showChat() {
     $('.upload-page').fadeOut('fast');
 
     setTimeout(function(){
-        $('#chatListPage').fadeIn('fast');
+
+        chatChannel = "TestChannel";
+
+        $('#chatPage').fadeIn('fast');
     }, 400);
 
 }
