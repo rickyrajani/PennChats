@@ -121,7 +121,10 @@ $(document).ready(function () {
   function HomeView() {
 
     if (currentUser) {
-      username = Parse.user.get("username");
+      Parse.User.current().fetch().then(function (user) {
+          username = user.get('username');
+      });
+      // username = "user";
       pubnub.connect(username);
 
 
@@ -223,6 +226,7 @@ $(document).ready(function () {
 
     sendMessageButton.off('click');
     sendMessageButton.click(function (event) {
+      console.log("message sent");
       var message = messageContent.val();
 
       if(message !== "") {
@@ -328,7 +332,6 @@ function showChat() {
     $('.upload-page').fadeOut('fast');
 
     setTimeout(function(){
-
         chatChannel = "TestChannel";
 
         $('#chatPage').fadeIn('fast');
@@ -351,7 +354,6 @@ function createUser() {
     user.set("name", nameValue);
     user.set("password", pwValue);
     user.set("email", emailValue);
-    // user.set("emailVerified", false);
       
     user.signUp(null, {
       success: function(user) {
@@ -375,7 +377,7 @@ function getUser() {
     },
     error: function(user, error) {
       // The login failed. Check error to see why.
-      alert("Error: " + error.code + "Log in failed. Incorrect Pennkey and/or password.");
+      alert("Error: " + error.code + "Log in failed. Incorrect pennkey and/or password.");
     }
   });
 }

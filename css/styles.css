@@ -150,13 +150,13 @@ p.intro strong {
 }
 
 .content-primary .ui-footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
 
 .content-primary .ui-footer textarea {
-  margin: 5px auto;
+  margin: 2px auto;
   width: 97%;
 }
 
@@ -222,7 +222,7 @@ p.intro strong {
     width: 1px;
     margin-bottom: -9999px;
     padding-bottom: 9999px;
-    background: #bbb;
+    /*background: #bbb;*/
   }
   .type-index .content-secondary {
     padding: 0;
@@ -246,6 +246,8 @@ p.intro strong {
     float: right;
     margin: 0;
     padding: 0;
+    /*background: #CAE5F3;*/
+    height: 400px;
   }
   /* collapsible non-inset example */
   .content-primary .ui-collapsible-content ul:first-child {
@@ -304,16 +306,16 @@ p.intro strong {
     background-position: 39%;
   }
   .content-secondary {
-    width: 34%;
+    width: 25%;
   }
   .content-primary {
-    width: 66%;
+    width: 75%;
     padding: 0;
     margin: 0;
   }
 
   .type-interior .content-primary .ui-footer {
-    width: 66%;
+    width: 70%;
   }
 }
 
@@ -463,3 +465,36 @@ dl dd ul li { border: none; }
     width: 40%;
     padding: 10px;
 }
+
+.ui-bar-a {
+    border: 0px solid #333; 
+    background: #A2C3D3;
+    color: #308FBB;
+    font-weight: bold;
+    text-shadow: 0 0px 0px #000; 
+}
+
+.ui-header .ui-title, .ui-footer .ui-title {
+    margin: .4em 30% .4em;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 20px;
+}
+
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 12px;
+}
+
+.ui-btn {
+    margin: .5em 2em 2em 8em;
+}
+
+.ui-grid-a .ui-block-a {
+    margin-left: 5px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.ui-btn-text {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
